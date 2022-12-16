@@ -14,9 +14,11 @@ def load_images():
     content_img = st.file_uploader("Choose the image to paint!")
     style_img = st.file_uploader("Choose the style!")
     if content_img:
-            content = Image.open(io.BytesIO(content_img.getvalue()))
-    if style_img:    
-            style = Image.open(io.BytesIO(style_img.getvalue()))
+            content = content_img.getvalue()
+            content = Image.open(io.BytesIO(content))
+    if style_img: 
+            style = style_img.getvalue()   
+            style = Image.open(io.BytesIO(style))
             return content, style
     else:
         return None
