@@ -13,8 +13,9 @@ from io import BytesIO
 def load_images():
     content_img = st.file_uploader("Choose the image to paint!")
     style_img = st.file_uploader("Choose the style!")
-    if content_img and style_img:
-            content = Image.open(io.BytesIO(content_img.getvalue()))    
+    if content_img:
+            content = Image.open(io.BytesIO(content_img.getvalue()))
+    if style_img:    
             style = Image.open(io.BytesIO(style_img.getvalue()))
             return content, style
     else:
