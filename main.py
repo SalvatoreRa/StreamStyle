@@ -4,11 +4,17 @@ import tensorflow_hub as hub
 import numpy as np
 import pandas as pd 
 
+import io
+from PIL import Image
+from io import BytesIO
+
 # https://en.wikipedia.org/wiki/Andor_(TV_series)
 
 def load_images():
-    content = st.file_uploader("Choose the image to paint!")
-    style = st.file_uploader("Choose the style!")
+    content_img = st.file_uploader("Choose the image to paint!")
+    style_img = st.file_uploader("Choose the style!")
+    content = Image.open(io.BytesIO(content_img.getvalue()))    
+    style = Image.open(io.BytesIO(style_img.getvalue()))
     return content, style
 
 def process_input(img):
