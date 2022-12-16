@@ -78,7 +78,7 @@ def main():
         model = load_model()
         styled_img = NST(model, content, style)
         outputs(style, content, styled_img)
-        styled_img.save(buf, format="JPEG")
+        img.save(styled_img, format="JPEG")
         byte_im = buf.getvalue()
         st.download_button(
             label="Download",
