@@ -63,7 +63,7 @@ def main():
     if content and style:
         model = load_model()
         styled_img = NST(model, content, style)
-
+        outputs(style, content, styled_img)
 
 
 if __name__ == "__main__":
