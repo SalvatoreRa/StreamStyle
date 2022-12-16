@@ -44,7 +44,7 @@ def process_output(tensor):
   if np.ndim(tensor)>3:
     assert tensor.shape[0] == 1
     tensor = tensor[0]
-  return PIL.Image.fromarray(tensor)
+  return Image.fromarray(tensor)
 
 def load_model():
     model = hub.load('https://tfhub.dev/google/magenta/arbitrary-image-stylization-v1-256/2')
