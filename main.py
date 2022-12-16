@@ -78,13 +78,12 @@ def main():
         model = load_model()
         styled_img = NST(model, content, style)
         outputs(style, content, styled_img)
-        with open("sytlized_image.jpg", "rb") as styled_img:
-            btn = st.download_button(
-                    label="Download image",
-                    data=styled_img,
-                    file_name="sytlized_image.jpg",
-                    mime="image/jpg"
-                )
+        st.download_button(
+            label="Download",
+            data=styled_img,
+            file_name="styled_img"+".png",
+            mime="image/png"
+            )
 
 
 if __name__ == "__main__":
