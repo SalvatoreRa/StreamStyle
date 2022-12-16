@@ -2,7 +2,7 @@ import streamlit as st
 import tensorflow as tf 
 import tensorflow_hub as hub
 import numpy as np
-import pd 
+import pandas as pd 
 
 # https://en.wikipedia.org/wiki/Andor_(TV_series)
 
