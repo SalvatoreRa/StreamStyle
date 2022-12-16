@@ -8,21 +8,21 @@ import io
 from PIL import Image
 from io import BytesIO
 
-# https://en.wikipedia.org/wiki/Andor_(TV_series)
+
 
 def load_images():
     content_img = st.file_uploader("Choose the image to paint!")
     style_img = st.file_uploader("Choose the style!")
     if content_img:
             cont = content_img.getvalue()
-            content = Image.open(io.BytesIO(cont))
+            content_img = Image.open(io.BytesIO(cont))
             print('p')
     if style_img: 
             styl = style_img.getvalue()   
-            style = Image.open(io.BytesIO(styl))
+            style_img = Image.open(io.BytesIO(styl))
             print('p')
     
-    return content, style
+    return content_img, style_img
 
 
 def process_input(img):
