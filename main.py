@@ -43,11 +43,27 @@ def NST(model, content, style):
     result = process_output(out)
     return result
 
+def outputs(style, content, styled_img):
+    col1, col2, col3 = st.columns([0.25, 0.25, 0.25])
+    with col1:
+        st.write('Content image')
+        st.image(content)
+    with col2:
+        st.write('Style image')
+        st.image(style)
+    with col3:
+        st.write('Stylized image')
+        st.image(styled_img)
+
 # Create the main app
 def main():
     st.title("Neural Style Transfer")
 
     content, style = load_images()
+    if content and style:
+        model = load_model()
+        styled_img = NST(model, content, style)
+
 
 
 if __name__ == "__main__":
