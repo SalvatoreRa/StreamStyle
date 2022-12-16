@@ -16,9 +16,11 @@ def load_images():
     if content_img:
             content = content_img.getvalue()
             content = Image.open(io.BytesIO(content))
+            print('p')
     if style_img: 
             style = style_img.getvalue()   
             style = Image.open(io.BytesIO(style))
+            print('p')
             return content, style
     else:
         return None
