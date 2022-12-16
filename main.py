@@ -7,8 +7,8 @@ import pd
 # https://en.wikipedia.org/wiki/Andor_(TV_series)
 
 def load_images():
-     content = st.file_uploader("Choose the image to paint!")
-     style = st.file_uploader("Choose the style!")
+    content = st.file_uploader("Choose the image to paint!")
+    style = st.file_uploader("Choose the style!")
     return content, style
 
 def process_input(img):
