@@ -21,9 +21,9 @@ def load_images():
             style = style_img.getvalue()   
             style = Image.open(io.BytesIO(style))
             print('p')
-            return content, style
-    else:
-        return None
+    
+    return content, style
+
 
 def process_input(img):
   max_dim = 1024
