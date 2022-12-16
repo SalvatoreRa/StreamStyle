@@ -13,9 +13,12 @@ from io import BytesIO
 def load_images():
     content_img = st.file_uploader("Choose the image to paint!")
     style_img = st.file_uploader("Choose the style!")
-    content = Image.open(io.BytesIO(content_img.getvalue()))    
-    style = Image.open(io.BytesIO(style_img.getvalue()))
-    return content, style
+    if content_img and style_img is not None:
+            content = Image.open(io.BytesIO(content_img.getvalue()))    
+            style = Image.open(io.BytesIO(style_img.getvalue()))
+            return content, style
+    else:
+        return None
 
 def process_input(img):
   max_dim = 1024
