@@ -78,10 +78,11 @@ def main():
         model = load_model()
         styled_img = NST(model, content, style)
         outputs(style, content, styled_img)
-        #buf = styled_img.save("styled_img.jpg", format="JPEG")
-        byte_im = styled_img.getvalue()
+        buf = BytesIO()
+        styled_img.save(buf, format="JPEG")
+        byte_im =buf.getvalue()
         st.download_button(
-            label="Download",
+            label="Download Image",
             data=byte_im,
             file_name="styled_img"+".jpg",
             mime="image/jpg"
