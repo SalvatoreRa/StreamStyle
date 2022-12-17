@@ -1,12 +1,17 @@
+#structural libraries
 import streamlit as st
+import io
+from PIL import Image
+from io import BytesIO
+import requests
+
+#model specific libraries
 import tensorflow as tf 
 import tensorflow_hub as hub
 import numpy as np
 import pandas as pd 
 
-import io
-from PIL import Image
-from io import BytesIO
+
 
 img_path = 'https://github.com/SalvatoreRa/StreamStyle/blob/main/img/robot_painting.png?raw=true'
 capt = 'An android painting. Image created by the author with DALL-E'
