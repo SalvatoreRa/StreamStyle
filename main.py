@@ -100,8 +100,13 @@ def main():
     st.subheader('Transform the style of your image with AI')
     with st.sidebar.expander("About this App"):
      st.write("""
-        Use this simple app to convert your favorite photo to a pencil sketch, a grayscale image or an image with blurring effect.  \n  \nThis app was created by Sharone Li as a side project to learn Streamlit and computer vision. Hope you enjoy!
+        This simple app is using **Neural Style Transfer** to apply the style of an image to another.
      """)
+    with st.sidebar.expander("About Neural Style Transfer"):
+        st.write("""
+        Neural style transfer is a technique in computer vision that allows for the creation of new images or videos by combining the content of one image or video with the style of another image or video. It is based on the idea of using deep neural networks to separate the content and style representations of an image and then recombining them in a new image that combines the content of the first with the style of the second. This technique has been used to create a wide range of applications, including the generation of artistic images and the creation of realistic virtual environments. It has also been used to improve the performance of machine learning models by providing a way to transfer knowledge from one domain to another. Neural style transfer has the potential to revolutionize the field of computer vision and has already had a significant impact on the way we think about and interact with images and videos.
+        (this is written by ChatGPT)
+        """)
 
     content, style = load_images()
     if content and style:
