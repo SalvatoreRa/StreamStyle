@@ -97,7 +97,7 @@ def main():
     response = requests.get(img_path)
     img_screen = Image.open(BytesIO(response.content))
     st.image(img_screen, caption=capt, width=None, use_column_width=None, clamp=False, channels="RGB", output_format="auto")
-    st.title('Transform the style of your image with AI')
+    st.subheader('Transform the style of your image with AI')
     content, style = load_images()
     if content and style:
         model = load_model()
