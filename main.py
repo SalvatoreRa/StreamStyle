@@ -8,6 +8,9 @@ import io
 from PIL import Image
 from io import BytesIO
 
+img_path = ''
+capt = 'An android painting. Image created by the author with DALL-E'
+img_logo = 'https://github.com/SalvatoreRa/StreamStyle/blob/main/img/logo.png?raw=true'
 
 
 def load_images():
