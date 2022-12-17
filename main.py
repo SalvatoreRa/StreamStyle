@@ -93,8 +93,8 @@ def main():
         
     with col2:
         response = requests.get(img_logo)
-        img_logo = Image.open(BytesIO(response.content))               
-        st.image(img_logo,  width=150)
+        logo = Image.open(BytesIO(response.content))               
+        st.image(logo,  width=150)
     
     response = requests.get(img_path)
     img_screen = Image.open(BytesIO(response.content))
