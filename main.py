@@ -8,7 +8,7 @@ import io
 from PIL import Image
 from io import BytesIO
 
-img_path = ''
+img_path = 'https://github.com/SalvatoreRa/StreamStyle/blob/main/img/robot_painting.png?raw=true'
 capt = 'An android painting. Image created by the author with DALL-E'
 img_logo = 'https://github.com/SalvatoreRa/StreamStyle/blob/main/img/logo.png?raw=true'
 
@@ -74,7 +74,11 @@ def outputs(style, content, styled_img):
 
 # Create the main app
 def main():
-    st.title("Neural Style Transfer")
+    st.title("StreamStyle")
+    st.subheader('Transform the style of your image with AI')
+    response = requests.get(img_path)
+    img_screen = Image.open(BytesIO(response.content))
+    st.image(img_screen, caption=capt, width=None, use_column_width=None, clamp=False, channels="RGB", output_format="auto")
 
     content, style = load_images()
     if content and style:
