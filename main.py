@@ -98,6 +98,11 @@ def main():
     img_screen = Image.open(BytesIO(response.content))
     st.image(img_screen, caption=capt, width=None, use_column_width=None, clamp=False, channels="RGB", output_format="auto")
     st.subheader('Transform the style of your image with AI')
+    with st.sidebar.expander("About this App"):
+     st.write("""
+        Use this simple app to convert your favorite photo to a pencil sketch, a grayscale image or an image with blurring effect.  \n  \nThis app was created by Sharone Li as a side project to learn Streamlit and computer vision. Hope you enjoy!
+     """)
+
     content, style = load_images()
     if content and style:
         model = load_model()
