@@ -34,12 +34,12 @@ def load_images():
 
 
 def process_input(img):
-  max_dim = 1024
+  
   img = tf.keras.preprocessing.image.img_to_array(img)
   img = tf.image.convert_image_dtype(img, tf.float32)
   shape = tf.cast(tf.shape(img)[:-1], tf.float32)
-  long_dim = max(shape)
-  scale = max_dim / long_dim
+  
+  scale = 1024 / max(shape)
   new_shape = tf.cast(shape * scale, tf.int32)
   img = tf.image.resize(img, new_shape)
   img = img[tf.newaxis, :]
