@@ -98,6 +98,11 @@ def main():
     img_screen = Image.open(BytesIO(response.content))
     st.image(img_screen, caption=capt, width=None, use_column_width=None, clamp=False, channels="RGB", output_format="auto")
     st.subheader('Transform the style of your image with AI')
+    
+    st.sidebar.image(logo,  width=150)
+    st.sidebar.markdown("---")
+    st.sidebar.markdown("Made by [Salvatore Raieli](https://www.linkedin.com/in/salvatore-raieli/)")
+    st.sidebar.markdown("---")
     with st.sidebar.expander("About this App"):
      st.write("""
         This simple app is using **Neural Style Transfer** to apply the style of an image to another.
